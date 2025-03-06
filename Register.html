@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <div id="mainNavbar"></div>
+    <div id="navbar"></div>
+
+    <div class="card" style="width: 45%; margin: 0 auto; margin-top: 35px; border-color: black;">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4 class="text-center">Register</h4>
+            </div>
+            <form >
+            <div class="mb-3">
+                <label class="form-label"><h6>ชื่อ/Name</h6></label>
+                <input type="text" class="form-control" style="height: 35px; font-size: 15px;" name="Name"  placeholder="กรอกชื่อ" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><h6>Email</h6></label>
+                <input type="email" class="form-control" style="height: 35px; font-size: 15px;" name="Email"  placeholder="กรอกอีเมล" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3" style="margin-top: 2%;">
+                <label class="form-label"><h6>Password</h6></label>
+                <input type="password" class="form-control" style="height: 35px; font-size: 15px;" id="InputCusPassword" name="Password"  placeholder="กรอกรหัสผ่าน">
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="ShowCusPassword" style="height: 15px; width: 15px; border-color: black;">
+                <label class="form-check-label" for="ShowCusPassword" style="font-size: 15px; padding-left: 5px;">Show Password</label>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label"><h6>ที่อยู่/Address</h6></label>
+                <input type="text" class="form-control" style="height: 35px; font-size: 15px;" name="Address" placeholder="กรอกที่อยู่">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label"><h6>จังหวัด/Province</h6></label>
+                    <input type="text" class="form-control" style="height: 35px; font-size: 15px;" name="Province" placeholder="กรอกจังหวัด">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label"><h6>รหัสไปรษณีย์/Zipcode</h6></label>
+                    <input type="text" class="form-control" style="height: 35px; font-size: 15px;" name="Zipcode" 
+                    placeholder="กรอกรหัสไปรษณีย์" minlength="0" maxlength="5">
+                </div>
+            </div>
+            
+            <div class="mb-3" style="margin-top: 2%;">
+                <label class="form-label"><h6>เบอร์โทรศัพท์/Phone</h6></label>
+                <input type="text" class="form-control" style="height: 35px; font-size: 15px;" name="Phone" placeholder="กรอกเบอร์โทรศัพท์"
+                minlength="0" maxlength="10" >
+
+                <button type="submit" onclick="registerUser()" class="btn btn-primary" id="box2" style="padding-top: 1%;">สมัครสมาชิก</button>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <div id="message" class="message"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        let ShowCusPassword = document.getElementById('ShowCusPassword');
+        let InputCusPassword = document.getElementById('InputCusPassword');
+        ShowCusPassword.addEventListener('click', function(){
+            if(InputCusPassword.type === 'password'){
+                InputCusPassword.type = 'text';
+            }else{
+                InputCusPassword.type = 'password';
+            }
+        });
+    </script>
+    <script src="Register.js"></script>
+</body>
+</html>
